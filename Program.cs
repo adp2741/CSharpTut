@@ -1,4 +1,5 @@
 ﻿using System;
+// using System.Speech;
 
 namespace ConsoleApplication
 {
@@ -6,17 +7,14 @@ namespace ConsoleApplication
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Hello how many hours of sleep did you get?");
-            int hours = int.Parse(Console.ReadLine());
+        //    SpeechSynthesizer 
+           GradeBook gradeBook = new GradeBook();
+           gradeBook.addGrade(65);
+           gradeBook.addGrade(99);
 
-            if (hours >= 8)
-            {
-                Console.WriteLine("You got a lot of sleep.");
-            }
-            else
-            {
-                Console.WriteLine("{0} is not enough.", hours);
-            }
+           GradeStatistics stats = gradeBook.computeStatistics();
+
+           System.Console.WriteLine(stats.returnStatistics());
         }
     }
 }
